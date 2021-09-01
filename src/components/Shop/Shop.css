@@ -1,0 +1,52 @@
+.shop-wrapper {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.shop-sidebar {
+  background-color: white;
+}
+/*
+.shop-sidebar span {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}*/
+
+.shop-sidebar ul {
+  list-style: none;
+}
+
+.shop-sidebar li {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.shop-sidebar li label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-sidebar li label input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+}
