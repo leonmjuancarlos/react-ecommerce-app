@@ -1,4 +1,5 @@
 {
+  "homepage": "https://leonmjuancarlos.github.io/react-ecommerce-app",
   "name": "react-ecommerce-app",
   "version": "0.1.0",
   "private": true,
@@ -20,7 +21,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --fix",
     "prettycheck": "prettier . --check",
-    "prettify": "prettier . --write"
+    "prettify": "prettier . --write",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.3.2"
   }
 }
