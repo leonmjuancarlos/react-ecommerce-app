@@ -3,7 +3,7 @@ import { CartContext } from '../../App'
 import Counter from '../Counter/Counter'
 import './CartProduct.css'
 
-export default function CartProduct({ product, totalPrice, setTotalPrice }) {
+export default function CartProduct({ product }) {
   const [amount, setAmount] = useState(1)
   const { dispatch } = useContext(CartContext)
 
@@ -16,13 +16,7 @@ export default function CartProduct({ product, totalPrice, setTotalPrice }) {
       </div>
       <div className="cart-product-controller">
         <span>${Math.round(product.price * 100) / 100} x</span>
-        <Counter
-          product={product}
-          amount={amount}
-          setAmount={setAmount}
-          totalPrice={totalPrice}
-          setTotalPrice={setTotalPrice}
-        />
+        <Counter product={product} amount={amount} setAmount={setAmount} />
         <i
           className="bx bxs-trash remove-product-from-cart-btn"
           onClick={() => {
@@ -31,7 +25,6 @@ export default function CartProduct({ product, totalPrice, setTotalPrice }) {
               product,
               totalProductPrice: amount * product.price,
             })
-            setTotalPrice(totalPrice - product.price * amount)
           }}
         ></i>
       </div>
