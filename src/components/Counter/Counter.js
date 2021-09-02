@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { CartContext } from '../../App'
 import './Counter.css'
 
 export default function Counter({
@@ -7,6 +9,7 @@ export default function Counter({
   totalPrice,
   setTotalPrice,
 }) {
+  const { dispatch } = useContext(CartContext)
   return (
     <div className="counter">
       <input type="number" value={amount} onChange={() => {}}></input>
@@ -17,6 +20,10 @@ export default function Counter({
           onClick={() => {
             setAmount(amount + 1)
             setTotalPrice(totalPrice + product.price)
+            dispatch({
+              type: 'INCREMENT_TOTAL_PRICE',
+              price: product.price,
+            })
           }}
         >
           +
@@ -28,6 +35,10 @@ export default function Counter({
             if (amount > 0) {
               setAmount(amount - 1)
               setTotalPrice(totalPrice - product.price)
+              dispatch({
+                type: 'DECREMENT_TOTAL_PRICE',
+                price: product.price,
+              })
             }
           }}
         >

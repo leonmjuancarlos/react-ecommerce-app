@@ -1,34 +1,15 @@
 import { useCallback, useReducer } from 'react'
-import './Shop.css'
 import { getBrands, phones } from '../../data/phones'
 import Products from '../Products/Products'
 import SidebarBox from '../SidebarBox/SidebarBox'
-
-const initialState = {
-  page: 1,
-  brands: [],
-}
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'CHANGE_PAGE':
-      return {
-        ...state,
-        page: action.page,
-      }
-    case 'BRANDS_FILTER':
-      return {
-        ...state,
-        brands: action.brands,
-        page: 1,
-      }
-    default:
-      return state
-  }
-}
+import { shopReducer } from '../../reducers/shop.reducer'
+import './Shop.css'
 
 export default function Shop() {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(shopReducer, {
+    page: 1,
+    brands: [],
+  })
 
   const handlePageClick = useCallback(
     (e) => {

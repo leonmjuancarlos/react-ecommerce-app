@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { CartContext } from '../App'
 import CartProduct from '../components/CartProduct/CartProduct'
 import './CartPage.css'
 
@@ -8,6 +9,10 @@ export default function CartPage({ products }) {
   const [totalPrice, setTotalPrice] = useState(
     products.reduce((acc, el) => acc + el.price, 0)
   )
+
+  const { state, dispatch } = useContext(CartContext)
+
+  console.log(state, dispatch)
 
   return (
     <div className="shipping-cart">
@@ -25,7 +30,7 @@ export default function CartPage({ products }) {
       ))}
       <div className="shipping-cart-footer">
         Total price:
-        <span>${Math.round(totalPrice * 100) / 100}</span>
+        <span>${Math.round(state.totalPrice * 100) / 100}</span>
       </div>
     </div>
   )

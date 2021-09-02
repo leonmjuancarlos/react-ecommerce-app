@@ -26,7 +26,11 @@ export default function Product({ data }) {
         <button
           className={isShown ? 'add-btn add-btn--active' : 'add-btn'}
           onClick={() => {
-            dispatch({ type: 'ADD_PRODUCT_TO_CART', product: data })
+            dispatch({
+              type: 'ADD_PRODUCT_TO_CART',
+              product: data,
+              price: data.price,
+            })
           }}
         >
           Add to cart

@@ -29,6 +29,7 @@ export default function CartProduct({ product, totalPrice, setTotalPrice }) {
             dispatch({
               type: 'REMOVE_PRODUCT_FROM_CART',
               product,
+              totalProductPrice: amount * product.price,
             })
             setTotalPrice(totalPrice - product.price * amount)
           }}
