@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../App'
+import isTouchDevice from '../../utils/isTouchDevice'
 import './Product.css'
 
 export default function Product({ data }) {
@@ -24,7 +25,13 @@ export default function Product({ data }) {
         }`}</span>
         <p className="product-description">{data.description}</p>
         <button
-          className={isShown ? 'add-btn add-btn--active' : 'add-btn'}
+          className={
+            isTouchDevice()
+              ? 'add-btn add-btn--active'
+              : isShown
+              ? 'add-btn add-btn--active'
+              : 'add-btn'
+          }
           onClick={() => {
             dispatch({
               type: 'ADD_PRODUCT_TO_CART',
