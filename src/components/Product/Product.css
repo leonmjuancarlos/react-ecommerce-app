@@ -65,16 +65,18 @@
 .add-btn {
   display: block;
   width: 50%;
-  height: 0;
+  height: 45px;
   background-color: #4747ff;
   color: white;
+  opacity: 0;
   margin: auto;
   margin-top: 15px;
   cursor: pointer;
   border: none;
-  transition: all 0.2s;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
 .add-btn--active {
-  height: 40px;
+  opacity: 1;
 }
