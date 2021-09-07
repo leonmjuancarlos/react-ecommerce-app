@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
-import Navbar from './components/Navbar/Navbar'
-import Shop from './components/Shop/Shop'
+import Navbar from './components/Navbar'
+import Shop from './pages/Shop'
 import CartPage from './pages/CartPage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { cartReducer } from './reducers/cart.reducer'

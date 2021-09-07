@@ -1,4 +1,4 @@
-import Cart from '../Cart/Cart'
+import Cart from '../Cart'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 

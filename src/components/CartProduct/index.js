@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../App'
-import Counter from '../Counter/Counter'
+import Counter from '../Counter'
 import './CartProduct.css'
 
 export default function CartProduct({ product }) {
