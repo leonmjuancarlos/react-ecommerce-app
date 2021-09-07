@@ -8,13 +8,13 @@ export default function CartProduct({ product }) {
   const { dispatch } = useContext(CartContext)
 
   return (
-    <div className="cart-product">
+    <div className="cart__product">
       <img src={product.images[0]}></img>
-      <div className="cart-product-info">
+      <div className="cart__product__info">
         <span>{product.title}</span>
         <p>{product.description}</p>
       </div>
-      <div className="cart-product-controller">
+      <div className="cart__product__controller">
         <span>${Math.round(product.price * 100) / 100} x</span>
         <Counter product={product} amount={amount} setAmount={setAmount} />
         <i

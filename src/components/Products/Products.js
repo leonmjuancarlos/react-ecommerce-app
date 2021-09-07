@@ -15,7 +15,7 @@ export default function Products({ phones, handlePageClick, page }) {
 
   return (
     <div className="products">
-      <div className="products-grid">
+      <div className="products__grid">
         {pagination()[page - 1].map((el) => (
           <Product key={el.title} data={el} />
         ))}
@@ -24,7 +24,7 @@ export default function Products({ phones, handlePageClick, page }) {
         {pagination().map((el, i) => (
           <div
             onClick={handlePageClick}
-            className="pagination-item"
+            className="pagination__item"
             key={i}
             style={{
               backgroundColor:

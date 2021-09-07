@@ -13,24 +13,24 @@ export default function Product({ data }) {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      <div className="product-img-wrapper">
+      <div className="product__img__wrapper">
         <img src={data.images[0]} />
       </div>
-      <div className="product-info">
-        <a href="#" className="product-title">
+      <div className="product__info">
+        <a href="#" className="product__title">
           {data.title}
         </a>
-        <span className="product-price">{`$${
+        <span className="product__price">{`$${
           Math.round(data.price * 100) / 100
         }`}</span>
-        <p className="product-description">{data.description}</p>
+        <p className="product__description">{data.description}</p>
         <button
           className={
             isTouchDevice()
-              ? 'add-btn add-btn--active'
+              ? 'add__btn add__btn--active'
               : isShown
-              ? 'add-btn add-btn--active'
-              : 'add-btn'
+              ? 'add__btn add__btn--active'
+              : 'add__btn'
           }
           onClick={() => {
             dispatch({

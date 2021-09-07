@@ -7,10 +7,10 @@ export default function Counter({ product, amount, setAmount }) {
   return (
     <div className="counter">
       <input type="number" value={amount} onChange={() => {}}></input>
-      <div className="counter-buttons-wrapper">
+      <div className="counter__buttons__wrapper">
         <button
           type="button"
-          className="counter-btn"
+          className="counter__btn"
           onClick={() => {
             setAmount(amount + 1)
             dispatch({
@@ -23,7 +23,7 @@ export default function Counter({ product, amount, setAmount }) {
         </button>
         <button
           type="button"
-          className="counter-btn"
+          className="counter__btn"
           onClick={() => {
             if (amount > 0) {
               setAmount(amount - 1)

@@ -15,7 +15,7 @@ const SidebarBoxTitle = styled.span`
 
 export default function SidebarBox({ title, list }) {
   return (
-    <div className="sidebar-box">
+    <div className="sidebar__box">
       <SidebarBoxTitle>{title}</SidebarBoxTitle>
       {list}
     </div>

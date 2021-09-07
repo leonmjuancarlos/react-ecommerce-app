@@ -4,7 +4,7 @@
   margin-bottom: 50px;
 }
 
-.products-grid {
+.products__grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, 285px);
@@ -24,7 +24,7 @@
   background-color: white;
 }
 
-.pagination-item {
+.pagination__item {
   width: 60px;
   background-color: aliceblue;
   color: black;

@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-.cart-link {
+.cart__link {
   width: 100%;
   height: 100%;
   text-decoration: none;
@@ -15,7 +15,7 @@
   color: rgb(163, 163, 163);
 }
 
-.cart-dropdown {
+.cart__dropdown {
   position: absolute;
   background-color: black;
   color: white;
@@ -27,20 +27,20 @@
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
 }
 
-.cart-dropdown--active {
+.cart__dropdown--active {
   max-height: 600px;
 }
 
-.cart-dropdown ul {
+.cart__dropdown ul {
   list-style-type: none;
 }
 
-.cart-dropdown ul li {
+.cart__dropdown ul li {
   padding: 20px 30px;
   border: 1px solid rgba(163, 163, 163, 0.5);
   cursor: pointer;
 }
 
-.cart-dropdown ul li:hover {
+.cart__dropdown ul li:hover {
   background-color: #4747ff;
 }

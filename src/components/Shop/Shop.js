@@ -49,8 +49,8 @@ export default function Shop() {
   }, [state.brands])
 
   return (
-    <div className="shop-wrapper">
-      <div className="shop-sidebar">
+    <div className="shop__wrapper">
+      <div className="shop__sidebar">
         <SidebarBox
           title={'Brands'}
           list={Object.entries(getBrands()).map(([brand, repeated]) => (
