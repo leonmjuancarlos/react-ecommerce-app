@@ -5,7 +5,7 @@ export const S = {}
 S.Navbar = styled.div`
   width: 100%;
   height: 50px;
-  background-color: ${({ theme }) => theme.headerBackground || '#343a40'};
+  background-color: #000000;
   margin-bottom: 20px;
   box-shadow: 0 1px 10px #343a40;
   position: sticky;

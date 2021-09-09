@@ -12,7 +12,7 @@ export default function Navbar() {
             textDecoration: 'none',
           }}
         >
-          <S.Title>E-comerce</S.Title>
+          <S.Title>E-commerce</S.Title>
         </Link>
         <Cart />
       </S.Container>

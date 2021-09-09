@@ -1,10 +1,11 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../App'
+import useCounter from '../../hooks/useCounter'
 import Counter from '../Counter'
 import './CartProduct.css'
 
 export default function CartProduct({ product }) {
-  const [amount, setAmount] = useState(1)
+  const counterHook = useCounter(1)
   const { dispatch } = useContext(CartContext)
 
   return (
@@ -16,14 +17,14 @@ export default function CartProduct({ product }) {
       </div>
       <div className="cart__product__controller">
         <span>${Math.round(product.price * 100) / 100} x</span>
-        <Counter product={product} amount={amount} setAmount={setAmount} />
+        <Counter product={product} counterHook={counterHook} />
         <i
           className="bx bxs-trash remove-product-from-cart-btn"
           onClick={() => {
             dispatch({
               type: 'REMOVE_PRODUCT_FROM_CART',
               product,
-              totalProductPrice: amount * product.price,
+              totalProductPrice: counterHook.count * product.price,
             })
           }}
         ></i>
