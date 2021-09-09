@@ -18,6 +18,7 @@ export default function Shop() {
           type: 'CHANGE_PAGE',
           page: Number.parseInt(e.target.textContent),
         })
+      window.scrollTo(0, 0)
     },
     [state.page]
   )
