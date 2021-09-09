@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../App'
-import { Link } from 'react-router-dom'
 import isTouchDevice from '../../utils/isTouchDevice'
-import './Cart.css'
+import S from './styles'
 
 export default function Cart() {
   const { state } = useContext(CartContext)
@@ -10,34 +9,29 @@ export default function Cart() {
   const { dispatch } = useContext(CartContext)
 
   return (
-    <div
-      className="cart"
+    <S.Cart
       onMouseEnter={() => setIsDropdown(true)}
       onMouseLeave={() => setIsDropdown(false)}
     >
-      <Link to="/cart" className="cart__link">
+      <S.CartLink to="/cart">
         <i className="bx bx-cart bx-md"></i>Cart ({state.products.length})
-      </Link>
+      </S.CartLink>
       {
         /* If isTouchDevice do not show cart dropdown */
         isTouchDevice() || (
-          <div
-            className={
-              isDropdown
-                ? 'cart__dropdown cart__dropdown--active'
-                : 'cart__dropdown'
-            }
-          >
+          <S.CartDropdown isDropdown={isDropdown}>
             <ul>
-              <li onClick={() => dispatch({ type: 'CLEAN_CART' })}>
+              <S.CartDropdownItem
+                onClick={() => dispatch({ type: 'CLEAN_CART' })}
+              >
                 Clean Cart
-              </li>
-              <li>Update Cart</li>
-              <li>Access Cart</li>
+              </S.CartDropdownItem>
+              <S.CartDropdownItem>Update Cart</S.CartDropdownItem>
+              <S.CartDropdownItem>Access Cart</S.CartDropdownItem>
             </ul>
-          </div>
+          </S.CartDropdown>
         )
       }
-    </div>
+    </S.Cart>
   )
 }
