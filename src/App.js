@@ -1,12 +1,19 @@
 import React, { useReducer } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import { cartReducer } from './reducers/cart.reducer'
 import Navbar from './components/Navbar'
 import Shop from './pages/Shop'
 import CartPage from './pages/CartPage'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { cartReducer } from './reducers/cart.reducer'
 import './App.css'
 
 export const CartContext = React.createContext()
+
+const theme = {
+  dark: {
+    headerBackground: 'black',
+  },
+}
 
 function App() {
   const [state, dispatch] = useReducer(cartReducer, {
@@ -16,15 +23,17 @@ function App() {
   return (
     <Router>
       <CartContext.Provider value={{ state, dispatch }}>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Shop />
-          </Route>
-          <Route path="/cart">
-            <CartPage products={state.products} />
-          </Route>
-        </Switch>
+        <ThemeProvider theme={theme.dark}>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Shop />
+            </Route>
+            <Route path="/cart">
+              <CartPage products={state.products} />
+            </Route>
+          </Switch>
+        </ThemeProvider>
       </CartContext.Provider>
     </Router>
   )
