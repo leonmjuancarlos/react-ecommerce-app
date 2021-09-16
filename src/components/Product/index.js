@@ -1,9 +1,12 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../App'
 import S from './styles'
+import imageToShow from './animations'
+import isTouchDevice from '../../utils/isTouchDevice'
 
 export default function Product({ data }) {
   const [isShown, setIsShown] = useState(false)
+  const [imgToShow, setImgToShow] = useState(0)
   const { dispatch } = useContext(CartContext)
 
   return (
@@ -12,7 +15,16 @@ export default function Product({ data }) {
       onMouseLeave={() => setIsShown(false)}
     >
       <S.ProductImgWrapper>
-        <S.ProductImg src={data.images[0]} />
+        <S.ProductImg
+          src={data.images[imgToShow]}
+          onMouseMove={(e) => {
+            if (!isTouchDevice()) {
+              if (imageToShow(e, data.images.length) === -1) setImgToShow(0)
+              else setImgToShow(imageToShow(e, data.images.length))
+            }
+          }}
+          onMouseOut={() => setImgToShow(0)}
+        />
       </S.ProductImgWrapper>
       <S.ProductInfoWrapper>
         <S.ProductTitle href="#">{data.title}</S.ProductTitle>
