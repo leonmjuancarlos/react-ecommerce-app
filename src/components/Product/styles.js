@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import isTouchDevice from '../../utils/isTouchDevice'
 
 const S = {}
@@ -46,7 +47,7 @@ S.ProductInfoWrapper = styled.div`
   padding: 15px;
 `
 
-S.ProductTitle = styled.a`
+S.ProductTitle = styled(Link)`
   font-size: 0.95rem;
   text-decoration: none;
 

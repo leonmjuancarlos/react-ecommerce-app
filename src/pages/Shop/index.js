@@ -1,11 +1,11 @@
 import { useCallback, useReducer } from 'react'
-import { getBrands, phones } from '../../data/phones'
+
 import Products from '../../components/Products'
 import SidebarBox from '../../components/SidebarBox'
 import { shopReducer } from '../../reducers/shop.reducer'
 import './Shop.css'
 
-export default function Shop() {
+export default function Shop({ phones, getBrands }) {
   const [state, dispatch] = useReducer(shopReducer, {
     page: 1,
     brands: [],

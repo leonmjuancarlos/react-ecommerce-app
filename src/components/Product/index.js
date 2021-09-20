@@ -27,7 +27,9 @@ export default function Product({ data }) {
         />
       </S.ProductImgWrapper>
       <S.ProductInfoWrapper>
-        <S.ProductTitle href="#">{data.title}</S.ProductTitle>
+        <S.ProductTitle to={`/products/${data.id}`}>
+          {data.title}
+        </S.ProductTitle>
         <S.ProductPrice>
           {`$${Math.round(data.price * 100) / 100}`}
         </S.ProductPrice>

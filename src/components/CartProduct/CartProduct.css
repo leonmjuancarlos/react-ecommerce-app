@@ -4,8 +4,8 @@
   border: 1px solid rgba(163, 163, 163, 0.5);
   padding: 20px 30px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  row-gap: 1.8rem;
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
@@ -39,23 +39,25 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
   width: 20%;
-  margin-left: 20px;
+  min-width: 200px;
+  row-gap: 0.7rem;
 }
 
 .cart__product__controller span {
-  display: block;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex: 0 1 70px;
   align-items: center;
-  width: 20%;
+  font-size: 0.9rem;
 }
 
 .remove-product-from-cart-btn {
   cursor: pointer;
-  width: 15%;
+  flex: 0 0 37px;
+  min-height: 2.18rem;
   background-color: white;
   border: 1px solid #d21313;
   color: #d21313;
@@ -84,6 +86,7 @@
 @media only screen and (max-width: 760px) {
   .cart__product {
     flex-direction: column;
+    row-gap: 0;
   }
   .cart__product img {
     width: 60%;
