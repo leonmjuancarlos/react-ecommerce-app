@@ -1,61 +1,11 @@
-import styled from 'styled-components'
 import { useState, useContext } from 'react'
 import { CartContext } from '../../App'
 import { useParams } from 'react-router'
 import capitalize from '../../utils/capitalize'
 import isTouchDevice from '../../utils/isTouchDevice'
 import imageToShow from '../../components/Product/animations'
-import { S as cc } from '../../components/Product/styles'
-
-const S = {}
-
-S.MainProductContainer = styled.div`
-  width: 70%;
-  margin: auto;
-  display: flex;
-  border: 1px solid black;
-`
-S.ImageWrapper = styled.div`
-  flex: 0 1 35%;
-  display: flex;
-  flex-flow: column nowrap;
-`
-S.ProductImg = styled.img``
-
-S.ProductInfoContainer = styled.div`
-  flex: 0 1 65%;
-  flex-flow: column nowrap;
-  border-left: 1px solid black;
-  padding: 2rem 3.5rem;
-`
-
-S.ProductTitle = styled.h2`
-  display: block;
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-`
-
-S.ProductPrice = styled.span`
-  display: block;
-  font-size: 1.8rem;
-  color: #ffc107;
-  margin: 0 0 1.3rem 0;
-`
-
-S.ProductPropertyWrapper = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  row-gap: 0.3rem;
-  margin-bottom: 1rem;
-  margin-top: 0;
-`
-S.ProductPropertyTitle = styled.span`
-  display: block;
-  font-weight: 500;
-`
-S.ProductPropertyDescription = styled.p`
-  display: block;
-`
+import S from './styles'
+import S2 from '../../components/Product/styles'
 
 export default function ProductPage({ phones }) {
   const { productId } = useParams()
@@ -94,7 +44,8 @@ export default function ProductPage({ phones }) {
               </S.ProductPropertyWrapper>
             )
         )}
-        <cc.AddBtn
+        <S2.AddBtn
+          isShown={true}
           onClick={() => {
             dispatch({
               type: 'ADD_PRODUCT_TO_CART',
@@ -104,7 +55,7 @@ export default function ProductPage({ phones }) {
           }}
         >
           Add to cart
-        </cc.AddBtn>
+        </S2.AddBtn>
       </S.ProductInfoContainer>
     </S.MainProductContainer>
   )

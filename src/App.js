@@ -35,11 +35,15 @@ function App() {
         <ThemeProvider theme={theme.dark}>
           <Navbar />
           <Switch>
-            <Route exact path="/react-ecommerce-app" component={Shop} />
+            <Route exact path="/react-ecommerce-app">
+              <Shop getBrands={getBrands} phones={phones}></Shop>
+            </Route>
             <Route exact path="/">
               <Shop getBrands={getBrands} phones={phones}></Shop>
             </Route>
-            <Route path="/cart" component={CartPage} />
+            <Route path="/cart">
+              <CartPage products={state.products} />
+            </Route>
             {/* Dynamic Route */}
             <Route path="/products/:productId">
               <ProductPage phones={phones} />
