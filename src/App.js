@@ -46,7 +46,7 @@ function App() {
         <ThemeProvider theme={theme.dark}>
           <Navbar />
           <Switch>
-            <Route
+            {/* <Route
               exact
               path="/react-ecommerce-app"
               render={() =>
@@ -54,23 +54,24 @@ function App() {
                   <Shop getBrands={getBrands} phones={phones}></Shop>
                 )
               }
-            ></Route>
+            /> */}
             <Route
               exact
-              path="/"
-              render={() =>
-                phones.length && (
-                  <Shop getBrands={getBrands} phones={phones}></Shop>
-                )
-              }
-            ></Route>
-            <Route path="/cart">
-              <CartPage products={state.products} />
-            </Route>
+              path={['/', '/react-ecommerce-app']}
+              render={() => {
+                if (phones.length)
+                  return <Shop getBrands={getBrands} phones={phones}></Shop>
+              }}
+            />
+            <Route
+              path="/cart"
+              render={() => <CartPage products={state.products} />}
+            />
             {/* Dynamic Route */}
-            <Route path="/products/:productId">
-              <ProductPage phones={phones} />
-            </Route>
+            <Route
+              path="/products/:productId"
+              render={() => <ProductPage phones={phones} />}
+            />
           </Switch>
         </ThemeProvider>
       </CartContext.Provider>
