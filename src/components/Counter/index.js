@@ -1,6 +1,8 @@
-import { useContext } from 'react'
-import { CartContext } from '../../App'
 import './Counter.css'
+
+import { useContext } from 'react'
+
+import { CartContext } from '../../App'
 
 export default function Counter({ product, counterHook }) {
   const { count, incrementCounter, decrementCounter } = counterHook

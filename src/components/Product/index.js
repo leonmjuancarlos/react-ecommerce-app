@@ -1,8 +1,9 @@
 import { useContext, useState } from 'react'
+
 import { CartContext } from '../../App'
-import S from './styles'
-import imageToShow from './animations'
 import isTouchDevice from '../../utils/isTouchDevice'
+import imageToShow from './animations'
+import S from './styles'
 
 export default function Product({ data }) {
   const [isShown, setIsShown] = useState(false)

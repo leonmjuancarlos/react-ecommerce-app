@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react'
+
 import { CartContext } from '../../App'
 import isTouchDevice from '../../utils/isTouchDevice'
 import S from './styles'

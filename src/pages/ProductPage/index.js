@@ -1,12 +1,13 @@
-import { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
-import { CartContext } from '../../App'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+
+import { CartContext } from '../../App'
+import imageToShow from '../../components/Product/animations'
+import S2 from '../../components/Product/styles'
 import capitalize from '../../utils/capitalize'
 import isTouchDevice from '../../utils/isTouchDevice'
-import imageToShow from '../../components/Product/animations'
 import S from './styles'
-import S2 from '../../components/Product/styles'
 
 export default function ProductPage({ phones }) {
   const { productId } = useParams()

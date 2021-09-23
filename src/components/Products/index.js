@@ -1,6 +1,8 @@
-import { useCallback } from 'react'
-import Product from '../Product'
 import './Products.css'
+
+import { useCallback } from 'react'
+
+import Product from '../Product'
 
 const PRODUCTS_PER_PAGE = 12
 

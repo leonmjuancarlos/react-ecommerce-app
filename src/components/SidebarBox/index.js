@@ -1,5 +1,6 @@
-import styled from 'styled-components'
 import './SidebarBox.css'
+
+import styled from 'styled-components'
 
 const SidebarBoxTitle = styled.span`
   display: flex;

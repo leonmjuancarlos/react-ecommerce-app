@@ -1,7 +1,9 @@
+import './CartPage.css'
+
 import { useContext } from 'react'
+
 import { CartContext } from '../../App'
 import CartProduct from '../../components/CartProduct'
-import './CartPage.css'
 
 export default function CartPage({ products }) {
   const { state } = useContext(CartContext)

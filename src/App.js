@@ -1,15 +1,16 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { cartReducer } from './reducers/cart.reducer'
-import { getBrands } from './data/phones'
-import Navbar from './components/Navbar'
-import Shop from './pages/Shop'
-import CartPage from './pages/CartPage'
 import './App.css'
-import ProductPage from './pages/ProductPage'
-import axios from 'axios'
 
+import axios from 'axios'
+import React, { useEffect, useReducer, useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
+import Navbar from './components/Navbar'
+import { getBrands } from './data/phones'
+import CartPage from './pages/CartPage'
+import ProductPage from './pages/ProductPage'
+import Shop from './pages/Shop'
+import { cartReducer } from './reducers/cart.reducer'
 export const CartContext = React.createContext()
 
 const GlobalStyle = createGlobalStyle`

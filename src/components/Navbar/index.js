@@ -1,5 +1,6 @@
-import Cart from '../Cart'
 import { Link } from 'react-router-dom'
+
+import Cart from '../Cart'
 import S from './styles'
 
 export default function Navbar() {
