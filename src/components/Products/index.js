@@ -1,10 +1,22 @@
 import './Products.css'
 
 import { useCallback } from 'react'
+import styled from 'styled-components'
 
 import Product from '../Product'
 
 const PRODUCTS_PER_PAGE = 12
+
+const S = {}
+
+S.NothingFound = styled.span`
+  display: block;
+  position: absolute;
+  top: 2rem;
+  font-size: 1.4rem;
+  color: black;
+  margin: auto;
+`
 
 export default function Products({ phones, handlePageClick, page }) {
   const pagination = useCallback(() => {
@@ -18,25 +30,30 @@ export default function Products({ phones, handlePageClick, page }) {
   return (
     <div className="products">
       <div className="products__grid">
-        {pagination()[page - 1].map((el) => (
-          <Product key={el.title} data={el} />
-        ))}
+        {phones.length ? (
+          pagination()[page - 1].map((el) => (
+            <Product key={el.title} data={el} />
+          ))
+        ) : (
+          <S.NothingFound>Nothing found...</S.NothingFound>
+        )}
       </div>
       <div className="pagination">
-        {pagination().map((el, i) => (
-          <div
-            onClick={handlePageClick}
-            className="pagination__item"
-            key={i}
-            style={{
-              backgroundColor:
-                Number.parseInt(page) === i + 1 ? '#4747ff' : 'aliceblue',
-              color: Number.parseInt(page) === i + 1 ? 'white' : 'black',
-            }}
-          >
-            {i + 1}
-          </div>
-        ))}
+        {phones.length > 0 &&
+          pagination().map((el, i) => (
+            <div
+              onClick={handlePageClick}
+              className="pagination__item"
+              key={i}
+              style={{
+                backgroundColor:
+                  Number.parseInt(page) === i + 1 ? '#4747ff' : 'aliceblue',
+                color: Number.parseInt(page) === i + 1 ? 'white' : 'black',
+              }}
+            >
+              {i + 1}
+            </div>
+          ))}
       </div>
     </div>
   )

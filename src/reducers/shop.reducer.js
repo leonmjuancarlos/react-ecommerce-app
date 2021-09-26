@@ -11,6 +11,12 @@ export const shopReducer = (state, action) => {
         brands: action.brands,
         page: 1,
       }
+
+    case 'SEARCH_FILTER':
+      return {
+        ...state,
+        searchText: action.searchText,
+      }
     default:
       return state
   }

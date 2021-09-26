@@ -6,39 +6,6 @@
   grid-template-columns: 260px 1fr;
 }
 
-.shop__sidebar {
-  background-color: white;
-}
-
-.shop__sidebar ul {
-  list-style: none;
-}
-
-.shop__sidebar li {
-  width: 100%;
-  height: 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding-left: 20px;
-}
-
-.shop__sidebar li label {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.shop__sidebar li label input[type='checkbox'] {
-  width: 20px;
-  height: 20px;
-  margin-right: 15px;
-  cursor: pointer;
-}
-
 @media only screen and (max-width: 840px) {
   .shop__wrapper {
     width: 90%;

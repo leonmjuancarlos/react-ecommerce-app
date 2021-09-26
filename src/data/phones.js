@@ -1,4 +1,4 @@
-export const phones = [
+/* export const phones = [
   {
     title: 'Apple iPhone 7 Plus 32 GB (Apple Türkiye Garantili)',
     category: 'phone',
@@ -524,9 +524,9 @@ export const phones = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
   },
-]
+] */
 
-export function getBrands() {
+export function getBrands(phones) {
   const brands = {}
   phones.forEach((el) => {
     if (brands[el.brand]) brands[el.brand] += 1

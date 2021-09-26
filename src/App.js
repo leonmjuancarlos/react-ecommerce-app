@@ -11,6 +11,7 @@ import CartPage from './pages/CartPage'
 import ProductPage from './pages/ProductPage'
 import Shop from './pages/Shop'
 import { cartReducer } from './reducers/cart.reducer'
+
 export const CartContext = React.createContext()
 
 const GlobalStyle = createGlobalStyle`

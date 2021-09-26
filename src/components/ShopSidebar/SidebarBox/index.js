@@ -2,7 +2,7 @@ import './SidebarBox.css'
 
 import styled from 'styled-components'
 
-const SidebarBoxTitle = styled.span`
+const StyledTitle = styled.span`
   display: flex;
   width: 100%;
   height: 60px;
@@ -14,11 +14,11 @@ const SidebarBoxTitle = styled.span`
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 `
 
-export default function SidebarBox({ title, list }) {
+export default function SidebarBox({ title, content }) {
   return (
     <div className="sidebar__box">
-      <SidebarBoxTitle>{title}</SidebarBoxTitle>
-      {list}
+      <StyledTitle>{title}</StyledTitle>
+      {content}
     </div>
   )
 }
