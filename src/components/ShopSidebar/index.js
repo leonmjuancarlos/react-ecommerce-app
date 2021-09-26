@@ -1,17 +1,3 @@
-/* <div className="shop__sidebar">
-        <SidebarBox
-          title={'Brands'}
-          list={Object.entries(getBrands()).map(([brand, repeated]) => (
-            <li key={brand}>
-              <label>
-                <input type="checkbox" onClick={handleChecked} />
-                {brand} ({repeated})
-              </label>
-            </li>
-          ))}
-        />
-      </div> */
-
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
@@ -52,6 +38,16 @@ S.ShopSidebar = styled.div`
   }
 `
 
+S.SearchBar = styled.input`
+  display: block;
+  width: 80%;
+  padding: 0.5rem 1rem;
+  margin: 0.7rem auto;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+`
+
 export default function ShopSidebar({ phones, shopReducer }) {
   const { state, dispatch } = shopReducer
   const handleChecked = useCallback(
@@ -90,7 +86,13 @@ export default function ShopSidebar({ phones, shopReducer }) {
     <S.ShopSidebar>
       <SidebarBox
         title={'Search'}
-        content={<input type="text" onChange={handleSearchTextChange}></input>}
+        content={
+          <S.SearchBar
+            type="text"
+            placeholder="Search product..."
+            onChange={handleSearchTextChange}
+          />
+        }
       />
       <SidebarBox
         title={'Brands'}

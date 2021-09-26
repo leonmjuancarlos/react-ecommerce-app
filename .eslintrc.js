@@ -12,10 +12,12 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'simple-import-sort'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   settings: {
     react: {
