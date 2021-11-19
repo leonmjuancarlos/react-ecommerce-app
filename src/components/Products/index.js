@@ -15,7 +15,7 @@ S.NothingFound = styled.span`
   top: 2rem;
   font-size: 1.4rem;
   color: black;
-  margin: auto;
+  margin: 1rem 0 0 3rem;
 `
 
 export default function Products({ phones, handlePageClick, page }) {

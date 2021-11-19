@@ -6,7 +6,7 @@ import Products from '../../components/Products'
 import ShopSidebar from '../../components/ShopSidebar'
 import { shopReducer } from '../../reducers/shop.reducer'
 
-export default function Shop({ phones, getBrands }) {
+export default function Shop({ phones }) {
   const [state, dispatch] = useReducer(shopReducer, {
     page: 1,
     brands: [],
@@ -31,14 +31,20 @@ export default function Shop({ phones, getBrands }) {
         state.searchText === ''
           ? state.brands.includes(el.brand)
           : state.brands.includes(el.brand) &&
-            el.title.toLowerCase().includes(state.searchText)
+            // el.title.toLowerCase().includes(state.searchText)
+            state.searchText
+              .split(' ')
+              .every((text) => el.title.toLowerCase().includes(text))
       )
     // If there is no brand in filter
     else
       return state.searchText === ''
         ? phones
         : phones.filter((el) =>
-            el.title.toLowerCase().includes(state.searchText)
+            // el.title.toLowerCase().includes(state.searchText)
+            state.searchText
+              .split(' ')
+              .every((text) => el.title.toLowerCase().includes(text))
           )
   }, [state.brands, state.searchText])
 

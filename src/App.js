@@ -37,8 +37,14 @@ function App() {
   useEffect(() => {
     axios
       .get('http://localhost:3001/phones')
-      .then((res) => setPhones(res.data))
-      .catch((err) => console.error(err))
+      .then((res) => {
+        setPhones(res.data)
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.error(err.response)
+        }
+      })
   }, [])
 
   return (
@@ -48,15 +54,6 @@ function App() {
         <ThemeProvider theme={theme.dark}>
           <Navbar />
           <Switch>
-            {/* <Route
-              exact
-              path="/react-ecommerce-app"
-              render={() =>
-                phones.length && (
-                  <Shop getBrands={getBrands} phones={phones}></Shop>
-                )
-              }
-            /> */}
             <Route
               exact
               path={['/', '/react-ecommerce-app']}
